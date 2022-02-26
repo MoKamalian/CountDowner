@@ -24,14 +24,17 @@ class ViewController: UIViewController {
         timer.invalidate()
     }
     
+    
     @IBAction func startTimer(_ sender: UIButton) {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setOffAlarm), userInfo: nil, repeats: true)
+        timeSelector.datePickerMode = UIDatePicker.Mode.countDownTimer
+    
+        timer = Timer.scheduledTimer(timeInterval: timeSelector.countDownDuration, target: self, selector: #selector(countDownTime), userInfo: nil, repeats: false)
     }
     
     
-    
-    @objc func setOffAlarm() {
-        print("alarm went off")
+    @objc func countDownTime() {
+        print("Alarm is going off")
+        
     }
     
 }
