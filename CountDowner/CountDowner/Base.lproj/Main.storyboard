@@ -24,6 +24,9 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="420" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfM-fO-AdU">
                                 <rect key="frame" x="20" y="262" width="374" height="216"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="selectedTimeWithSender:forEvent:" destination="BYZ-38-t0r" eventType="valueChanged" id="cqQ-8y-IB7"/>
+                                </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="vxT-E9-jzP">
                                 <rect key="frame" x="20" y="617" width="374" height="50"/>

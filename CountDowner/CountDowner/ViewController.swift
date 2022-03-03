@@ -9,16 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-    let timeSelector: UIDatePicker = UIDatePicker()
+
     var timer = Timer()
+    var numberOfSeconds: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    
+    @IBAction func selectedTime(sender: UIDatePicker, forEvent event: UIEvent) {
+        numberOfSeconds = sender.countDownDuration as Double
+        
+    }
     
     @IBAction func stopTimer(_ sender: UIButton) {
         timer.invalidate()
@@ -26,15 +29,22 @@ class ViewController: UIViewController {
     
     
     @IBAction func startTimer(_ sender: UIButton) {
-        timeSelector.datePickerMode = UIDatePicker.Mode.countDownTimer
-    
-        timer = Timer.scheduledTimer(timeInterval: timeSelector.countDownDuration, target: self, selector: #selector(countDownTime), userInfo: nil, repeats: false)
+        print(numberOfSeconds)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDownTime), userInfo: nil, repeats: true)
     }
     
-    
     @objc func countDownTime() {
-        print("Alarm is going off")
         
+        if numberOfSeconds != 0.0 {
+            
+            numberOfSeconds -= 1.0
+            print(numberOfSeconds)
+            
+        } else if numberOfSeconds == 0.0 {
+            
+            print("Alarm is going off")
+            
+        }
     }
     
 }
