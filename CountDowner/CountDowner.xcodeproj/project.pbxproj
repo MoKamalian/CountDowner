@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0657DF8527D987B1009508F8 /* CountDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0657DF8427D987B1009508F8 /* CountDownController.swift */; };
+		0657DF8927DD7245009508F8 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0657DF8827DD7245009508F8 /* TimeHelper.swift */; };
 		0680407727B32B9600D3C212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680407627B32B9600D3C212 /* AppDelegate.swift */; };
 		0680407927B32B9600D3C212 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680407827B32B9600D3C212 /* SceneDelegate.swift */; };
 		0680407B27B32B9600D3C212 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680407A27B32B9600D3C212 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0657DF8427D987B1009508F8 /* CountDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownController.swift; sourceTree = "<group>"; };
+		0657DF8827DD7245009508F8 /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		0680407327B32B9600D3C212 /* CountDowner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountDowner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0680407627B32B9600D3C212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0680407827B32B9600D3C212 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0657DF8227D98272009508F8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0680407A27B32B9600D3C212 /* ViewController.swift */,
+				0657DF8427D987B1009508F8 /* CountDownController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0657DF8727DD721F009508F8 /* TimeModel */ = {
+			isa = PBXGroup;
+			children = (
+				0657DF8827DD7245009508F8 /* TimeHelper.swift */,
+			);
+			path = TimeModel;
+			sourceTree = "<group>";
+		};
 		0680406A27B32B9600D3C212 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +81,8 @@
 			children = (
 				0680407627B32B9600D3C212 /* AppDelegate.swift */,
 				0680407827B32B9600D3C212 /* SceneDelegate.swift */,
-				0680407A27B32B9600D3C212 /* ViewController.swift */,
+				0657DF8727DD721F009508F8 /* TimeModel */,
+				0657DF8227D98272009508F8 /* Controllers */,
 				0680407C27B32B9600D3C212 /* Main.storyboard */,
 				0680408227B32BA000D3C212 /* Assets.xcassets */,
 				0680408427B32BA000D3C212 /* LaunchScreen.storyboard */,
@@ -142,8 +164,10 @@
 			files = (
 				0680408127B32B9600D3C212 /* CountDowner.xcdatamodeld in Sources */,
 				0680407B27B32B9600D3C212 /* ViewController.swift in Sources */,
+				0657DF8927DD7245009508F8 /* TimeHelper.swift in Sources */,
 				0680407727B32B9600D3C212 /* AppDelegate.swift in Sources */,
 				0680407927B32B9600D3C212 /* SceneDelegate.swift in Sources */,
+				0657DF8527D987B1009508F8 /* CountDownController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
