@@ -6,12 +6,13 @@
 //
 
 import Foundation
-
+import AVFoundation
 
 class TimeHelper {
     
     
     static var timer: Timer = Timer()
+    static var audioPlayer: AVAudioPlayer!
     static var labelTimer: Bool = false
     static var timeInSeconds: Double = 0.0
     static var count: String = "00:00:00"
@@ -25,21 +26,25 @@ class TimeHelper {
         timer.invalidate()
     }
     
-    
+    // TODO: figure out how to play the alarm sound 
     @objc class func timeCounter() {
         
         if timeInSeconds != 0.0 {
             labelTimer = true
+            
             timeLabel()
             timeInSeconds -= 1
             print(timeInSeconds)
         } else {
             labelTimer = false
-            print("Alarm is going off")
+            
+            let soundURL = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+            audioPlayer = try! AVAudioPlayer(contentsOf: soundURL!)
+            audioPlayer?.play()
         }
     }
     
-    // TODO - create a method that will update the countdown timer 
+     
     class func timeLabel() {
         let totalSeconds = Int(timeInSeconds)
         

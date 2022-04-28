@@ -28,11 +28,12 @@ class CountDownController: UIViewController {
     
     @IBOutlet weak var timeCount: UILabel!
     
+    /* The TimeHelper.count property keeps count of the time value and is used as the label */
     @objc func changeLabel() {
         timeCount.text = "\(TimeHelper.count)"
     }
     
-    
+    // stops the timer alarm from going off as well as the counter itself
     @IBAction func stopButtonPressed(_ sender: UIButton) {
         TimeHelper.timeInvalidator()
         self.dismiss(animated: true, completion: nil)

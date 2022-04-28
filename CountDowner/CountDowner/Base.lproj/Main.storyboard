@@ -94,14 +94,14 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ngt-2J-JYf">
-                                <rect key="frame" x="20" y="302" width="374" height="35.5"/>
+                                <rect key="frame" x="100" y="302" width="214" height="35.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-Vn-7qh">
-                                        <rect key="frame" x="0.0" y="1" width="58" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="1" width="33" height="34.5"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMo-ug-eOc">
-                                        <rect key="frame" x="62" y="0.0" width="312" height="35.5"/>
+                                        <rect key="frame" x="37" y="0.0" width="177" height="35.5"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="35"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -112,14 +112,13 @@
                         <viewLayoutGuide key="safeArea" id="DnH-ht-ARX"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DnH-ht-ARX" firstAttribute="bottom" secondItem="l1X-xs-21U" secondAttribute="bottom" constant="234" id="8du-au-BW0"/>
-                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="ngt-2J-JYf" secondAttribute="trailing" constant="20" id="Ddz-qI-vaq"/>
-                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="l1X-xs-21U" secondAttribute="trailing" constant="126" id="Snx-9Z-jAt"/>
-                            <constraint firstItem="l1X-xs-21U" firstAttribute="top" secondItem="ngt-2J-JYf" secondAttribute="bottom" constant="188.5" id="eum-cd-lxR"/>
-                            <constraint firstItem="l1X-xs-21U" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="126" id="gWY-Bu-6wy"/>
-                            <constraint firstItem="l1X-xs-21U" firstAttribute="top" secondItem="ngt-2J-JYf" secondAttribute="bottom" constant="188.5" id="jn1-bg-LZB"/>
-                            <constraint firstItem="ngt-2J-JYf" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="20" id="vo6-5D-wld"/>
-                            <constraint firstItem="ngt-2J-JYf" firstAttribute="top" secondItem="DnH-ht-ARX" secondAttribute="top" constant="302" id="zHd-w1-3Wd"/>
+                            <constraint firstItem="DnH-ht-ARX" firstAttribute="bottom" secondItem="l1X-xs-21U" secondAttribute="bottom" constant="234" id="0oe-aZ-aem"/>
+                            <constraint firstItem="ngt-2J-JYf" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="100" id="1SG-0A-Xr1"/>
+                            <constraint firstItem="l1X-xs-21U" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="126" id="GQY-hC-HJo"/>
+                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="l1X-xs-21U" secondAttribute="trailing" constant="126" id="ISg-xB-EKW"/>
+                            <constraint firstItem="l1X-xs-21U" firstAttribute="top" secondItem="ngt-2J-JYf" secondAttribute="bottom" constant="188.5" id="ZcT-fa-Qif"/>
+                            <constraint firstItem="ngt-2J-JYf" firstAttribute="top" secondItem="DnH-ht-ARX" secondAttribute="top" constant="302" id="g8c-eN-e4q"/>
+                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="ngt-2J-JYf" secondAttribute="trailing" constant="100" id="xiQ-wC-4xt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bC5-S1-h4l"/>
