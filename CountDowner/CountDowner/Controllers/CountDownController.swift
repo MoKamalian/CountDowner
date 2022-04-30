@@ -13,6 +13,7 @@ class CountDownController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        timeCount.text = "00:00:00"
         
         timerLabel = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(changeLabel), userInfo: nil, repeats: true)
         
@@ -21,12 +22,11 @@ class CountDownController: UIViewController {
         } else if TimeHelper.labelTimer == false {
             timerLabel.invalidate()
         }
-        
-        
-        
     }
     
+   
     @IBOutlet weak var timeCount: UILabel!
+    
     
     /* The TimeHelper.count property keeps count of the time value and is used as the label */
     @objc func changeLabel() {

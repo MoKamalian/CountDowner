@@ -24,9 +24,6 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="420" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfM-fO-AdU">
                                 <rect key="frame" x="20" y="262" width="374" height="216"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="selectedTimeWithSender:forEvent:" destination="BYZ-38-t0r" eventType="valueChanged" id="cqQ-8y-IB7"/>
-                                </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="vxT-E9-jzP">
                                 <rect key="frame" x="20" y="617" width="374" height="50"/>
@@ -67,6 +64,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="timeSelector" destination="WfM-fO-AdU" id="THs-hA-UaG"/>
                         <segue destination="lfm-7W-zkX" kind="show" identifier="StartButtonPressedTimer" id="1rp-1L-awr"/>
                     </connections>
                 </viewController>
@@ -85,6 +83,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-xs-21U">
                                 <rect key="frame" x="126" y="526" width="162" height="48"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="csn-j2-x3z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,36 +95,38 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ngt-2J-JYf">
-                                <rect key="frame" x="100" y="302" width="214" height="35.5"/>
+                                <rect key="frame" x="100" y="302" width="239" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-Vn-7qh">
-                                        <rect key="frame" x="0.0" y="1" width="33" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="1" width="37" height="39"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMo-ug-eOc">
-                                        <rect key="frame" x="37" y="0.0" width="177" height="35.5"/>
+                                        <rect key="frame" x="41" y="0.0" width="198" height="40"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="35"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VqX-8q-89v"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DnH-ht-ARX"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DnH-ht-ARX" firstAttribute="bottom" secondItem="l1X-xs-21U" secondAttribute="bottom" constant="234" id="0oe-aZ-aem"/>
-                            <constraint firstItem="ngt-2J-JYf" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="100" id="1SG-0A-Xr1"/>
-                            <constraint firstItem="l1X-xs-21U" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="126" id="GQY-hC-HJo"/>
-                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="l1X-xs-21U" secondAttribute="trailing" constant="126" id="ISg-xB-EKW"/>
-                            <constraint firstItem="l1X-xs-21U" firstAttribute="top" secondItem="ngt-2J-JYf" secondAttribute="bottom" constant="188.5" id="ZcT-fa-Qif"/>
-                            <constraint firstItem="ngt-2J-JYf" firstAttribute="top" secondItem="DnH-ht-ARX" secondAttribute="top" constant="302" id="g8c-eN-e4q"/>
-                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="ngt-2J-JYf" secondAttribute="trailing" constant="100" id="xiQ-wC-4xt"/>
+                            <constraint firstItem="DnH-ht-ARX" firstAttribute="bottom" secondItem="l1X-xs-21U" secondAttribute="bottom" constant="234" id="OlI-Yh-6bF"/>
+                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="l1X-xs-21U" secondAttribute="trailing" constant="126" id="RkZ-DF-KJb"/>
+                            <constraint firstItem="l1X-xs-21U" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="126" id="bNN-BY-JUy"/>
+                            <constraint firstItem="DnH-ht-ARX" firstAttribute="trailing" secondItem="ngt-2J-JYf" secondAttribute="trailing" constant="75" id="iTn-cB-7G1"/>
+                            <constraint firstItem="ngt-2J-JYf" firstAttribute="leading" secondItem="DnH-ht-ARX" secondAttribute="leading" constant="100" id="uBW-eV-1g9"/>
+                            <constraint firstItem="ngt-2J-JYf" firstAttribute="top" secondItem="DnH-ht-ARX" secondAttribute="top" constant="302" id="vux-el-Mzq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bC5-S1-h4l"/>
                     <connections>
-                        <outlet property="timeCount" destination="JMo-ug-eOc" id="pZc-PI-s1h"/>
+                        <outlet property="timeCount" destination="JMo-ug-eOc" id="gZq-ca-dw5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOg-Gm-9ht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -13,21 +13,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timeSelector.datePickerMode = .countDownTimer
         
     }
     
+    /*
     @IBAction func selectedTime(sender: UIDatePicker, forEvent event: UIEvent) {
         TimeHelper.timeInSeconds = sender.countDownDuration as Double
     
     }
+    */
     
-    @IBAction func stopTimer(_ sender: UIButton) {
-        TimeHelper.timeInvalidator()
-    }
+    @IBOutlet weak var timeSelector: UIDatePicker!
     
-    
+    /* grabs the number of seconds selected by the user and sends it to TimeHelper to initiate the count down in seconds */
     @IBAction func startTimer(_ sender: UIButton) {
+        TimeHelper.timeInSeconds = timeSelector.countDownDuration as Double
         TimeHelper.fireTimer()
         performSegue(withIdentifier: "StartButtonPressedTimer", sender: self)
     }

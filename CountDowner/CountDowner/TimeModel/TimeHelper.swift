@@ -12,7 +12,7 @@ class TimeHelper {
     
     
     static var timer: Timer = Timer()
-    static var audioPlayer: AVAudioPlayer!
+    static var audioPlayer: AVAudioPlayer?
     static var labelTimer: Bool = false
     static var timeInSeconds: Double = 0.0
     static var count: String = "00:00:00"
@@ -22,17 +22,19 @@ class TimeHelper {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timeCounter), userInfo: nil, repeats: true)
     }
     
+    /* stops the timer from counting down and also immediatly stops the alarm */
     class func timeInvalidator() {
+        audioPlayer?.stop()
         timer.invalidate()
     }
     
-    // TODO: figure out how to play the alarm sound 
+    /* main method used to keep count of the seconds passed and to update the counter variable used to update the timer label */
     @objc class func timeCounter() {
         
         if timeInSeconds != 0.0 {
             labelTimer = true
             
-            timeLabel()
+            timeLabel(timeInSeconds - 1)
             timeInSeconds -= 1
             print(timeInSeconds)
         } else {
@@ -44,16 +46,18 @@ class TimeHelper {
         }
     }
     
-     
-    class func timeLabel() {
+     /* used in setting the counter variable which will eventually be used to update a timer label */
+    class func timeLabel(_ timeInSeconds: Double) {
         let totalSeconds = Int(timeInSeconds)
         
         
-        let hours: Int = totalSeconds / 3600
-        let minutes: Int = (totalSeconds % 3600) / 60
-        let seconds: Int = totalSeconds % 60
+        let hours: String = (totalSeconds / 3600) > 9 ? "\(totalSeconds/3600)" : "0\(totalSeconds/3600)"
+        let minutes: String = ((totalSeconds % 3600) / 60) > 9 ? "\((totalSeconds % 3600) / 60)" : "0\((totalSeconds % 3600) / 60)"
+        let seconds: String = (totalSeconds % 60) > 9 ? "\(totalSeconds % 60)" : "0\(totalSeconds % 60)"
         
         count = "\(hours):\(minutes):\(seconds)"
+        
+        
         
     }
     
