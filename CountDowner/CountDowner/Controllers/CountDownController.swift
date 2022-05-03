@@ -13,7 +13,7 @@ class CountDownController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeCount.text = "00:00:00"
+        timeCount.text = TimeHelper.count
         
         timerLabel = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(changeLabel), userInfo: nil, repeats: true)
         
@@ -36,6 +36,7 @@ class CountDownController: UIViewController {
     // stops the timer alarm from going off as well as the counter itself
     @IBAction func stopButtonPressed(_ sender: UIButton) {
         TimeHelper.timeInvalidator()
+        TimeHelper.count = "00:00:00"
         self.dismiss(animated: true, completion: nil)
     }
     

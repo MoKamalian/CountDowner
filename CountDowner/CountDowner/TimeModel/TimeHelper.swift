@@ -56,9 +56,7 @@ class TimeHelper {
         let seconds: String = (totalSeconds % 60) > 9 ? "\(totalSeconds % 60)" : "0\(totalSeconds % 60)"
         
         count = "\(hours):\(minutes):\(seconds)"
-        
-        
-        
+            
     }
     
     /*
